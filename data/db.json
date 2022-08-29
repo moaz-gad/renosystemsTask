@@ -1,11 +1,3 @@
 {
-  "users": [
-    {
-      "name": "Moaz ",
-      "username": "Gad",
-      "email": "Moaz@gmail.com",
-      "group": "Head office",
-      "id": 1
-    }
-  ]
+  "users": []
 }

@@ -35,8 +35,7 @@ const New = () => {
          <div className="container">
            <div className="title">Add New User</div>
            <div className="content">
-            <div className="formInput">
-             </div>
+             <div className="formInput"></div>
              <form onSubmit={handleSubmit}>
                <div className="user-details">
                  <div className="input-box">
@@ -72,18 +71,38 @@ const New = () => {
                  <div className="input-box">
                    <span className="details">User Group</span>
                    <select
+                     className="choose"
                      value={group}
                      onChange={(e) => setGroup(e.target.value)}
                    >
-                     <option value="Head office">"Head office"</option>
-                     <option value="mangers">"mangers"</option>
-                     <option value="office">"office"</option>
+                     <option className="choose" value="Head office">
+                       Head office
+                     </option>
+                     <option className="choose" value="mangers">
+                       mangers
+                     </option>
+                     <option className="choose" value="office">
+                       office
+                     </option>
                    </select>
                  </div>
-
                  <div className="input-box">
                    <span className="details">Assign Profile</span>
-                   <input type="text" placeholder="Choose Profile" />
+                   <select
+                     className="choose"
+                     value={group}
+                     onChange={(e) => setGroup(e.target.value)}
+                   >
+                     <option className="choose" value="Head office">
+                       Head office
+                     </option>
+                     <option className="choose" value="mangers">
+                       mangers
+                     </option>
+                     <option className="choose" value="office">
+                       office
+                     </option>
+                   </select>
                  </div>
                </div>
                <div className="button">
