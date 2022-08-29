@@ -3,18 +3,25 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import { Link } from "react-router-dom";
 import logo from "../../assets/renoLogo.png"
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined"
-
+import { useState } from "react";
 const Sidebar = () => {
+   const [searchTerm, setSearchTerm] = useState("")
+  
   return (
     <div className="sidebar">
       <div className="top">
         <Link to="/" style={{ textDecoration: "none" }}>
           <span className="logo">
-            <img src={logo} alt="logo"/>{" "}
+            <img src={logo} alt="logo" />{" "}
           </span>
         </Link>
         <div className="search">
-          <input type="text" placeholder="Quick access" />
+          <input
+            type="text"
+            placeholder="Quick access"
+            value={searchTerm}
+            
+          />
           <SearchOutlinedIcon />
         </div>
       </div>

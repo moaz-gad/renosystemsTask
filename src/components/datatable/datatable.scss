@@ -71,3 +71,10 @@
     }
   }
 }
+.userMangement{
+  display: flex;
+  flex-direction: column;
+}
+.userMangement input{
+  margin-top: 1rem;
+}

@@ -1,13 +1,15 @@
 import "./datatable.scss"
 import { DataGrid } from "@mui/x-data-grid"
 import AddIcon from "@mui/icons-material/Add"
+import SearchIcon from "@mui/icons-material/Search"
 import { userColumns } from "../../datatablesource"
 import { Link,useNavigate } from "react-router-dom"
 import useFetch from "./useFetch"
+import { useState } from "react"
 
 const Datatable = () => {
   const { data: users} = useFetch("http://localhost:8000/users");
-  
+  const [searchTerm, setSearchTerm] = useState("")
   
   const navigate = useNavigate()
   const handleDelete = (id) => {
@@ -37,11 +39,23 @@ const Datatable = () => {
       },
     },
   ]
+  
+  function search(rows) {
+    return rows.filter((row) => row.name.toLowerCase().indexOf(searchTerm) > -1)
+  }
 
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        User Management
+        <div className="userMangement">
+          User Management
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Search"
+          />
+        </div>
         <Link to="/users/new" className="link">
           <AddIcon /> Add New
         </Link>
@@ -49,7 +63,7 @@ const Datatable = () => {
       {users && (
         <DataGrid
           className="datagrid"
-          rows={users}
+          rows={search(users)}
           columns={userColumns.concat(actionColumn)}
           pageSize={9}
           rowsPerPageOptions={[9]}
