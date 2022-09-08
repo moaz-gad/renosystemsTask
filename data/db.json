@@ -1,32 +1,11 @@
 {
   "users": [
     {
-      "name": "Moaz Gad",
-      "username": "Moazelgad",
-      "email": "moaz.a.gad@gmail.com",
-      "group": "office",
-      "id": 1
-    },
-    {
-      "name": "Salem ",
-      "username": "salem14",
-      "email": "salem@gmail.com",
-      "group": "mangers",
-      "id": 2
-    },
-    {
       "name": "ahmed ",
       "username": "hamda",
       "email": "ahmed@hamada.com",
       "group": "mangers",
       "id": 4
-    },
-    {
-      "name": "mohamed",
-      "username": "hamada",
-      "email": "hamada@gmail.com",
-      "group": "Head office",
-      "id": 5
     }
   ]
 }
